@@ -17,13 +17,17 @@ const borrowRecordSchema = new mongoose.Schema({
   },
   returnDate: {
     type: Date,
-    default: null,
   },
   status: {
     type: String,
     enum: ["borrowed", "returned"],
     default: "borrowed",
-  }
+  },
+  returnAt: {
+    type: Date,
+    default: null
+  },
+
 }, { timestamps: true });
 
 const BorrowRecord = mongoose.model("BorrowRecord", borrowRecordSchema);

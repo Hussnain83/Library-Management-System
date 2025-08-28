@@ -13,7 +13,7 @@ import bookRoutes from "./routes/bookRoutes.js"
 import borrowRoutes from "./routes/borrowRoutes.js"
 app.use("/user", userRoutes);
 app.use("/book", bookRoutes);
-app.use("/borrow", borrowRoutes);
+app.use("/", borrowRoutes);
 
 app.listen(PORT, ()=>{
     console.log("listening on port",PORT);
