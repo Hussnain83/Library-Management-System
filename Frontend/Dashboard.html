@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Library Management</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">Dashboard</h1>
+            <div class="nav-right">
+                <span id="welcome-user">Loading...</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loading" class="loading">
+                <p>Loading dashboard...</p>
+            </div>
+
+            <!-- Dashboard Grid (Hidden initially) -->
+            <div id="dashboard-grid" class="dashboard-grid hidden">
+                <!-- Grid boxes will be dynamically generated here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="Js/authCheck.js"></script>
+    <script>
+        // Check authentication when dashboard loads
+        checkAuth();
+    </script>
+    <script src="Js/dashboard.js"></script>
+</body>
+</html>

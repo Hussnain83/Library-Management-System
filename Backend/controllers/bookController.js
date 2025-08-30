@@ -22,7 +22,7 @@ export const addBooks = async (req, res) =>{
         const newBook = new Book(data);
         const response = await newBook.save();
         console.log("Book data saved");
-        res.status(200).json({response: response});
+        res.status(200).json({response: response, message: "Book got saved"});
         
     } 
     catch (error) {

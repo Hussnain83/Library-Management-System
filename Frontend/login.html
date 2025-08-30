@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — BookWise</title>
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <main class="auth-page">
+    <section class="card" aria-labelledby="login-heading">
+      <header class="brand">
+        <div class="logo">📚</div>
+        <div>
+          <h1 id="login-heading">BookWise</h1>
+          <p class="subtitle">Welcome back</p>
+        </div>
+      </header>
+
+      <form id="loginForm" class="form" autocomplete="on" novalidate>
+        
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Enter your password" />
+        </div>
+
+        <button type="submit" class="btn">Sign in</button>
+
+        <p class="muted">
+          Don't have an account?
+          <a href="index.html" class="link">Create one</a>
+        </p>
+      </form>
+
+      <footer class="small">Minimal design • Reuse colors from <code>css/auth.css</code></footer>
+    </section>
+  </main>
+
+  <script src="Js/login.js"></script> <!-- this page javascript -->
+  <script src="Js/authCheck.js"></script> <!-- importing the file -->
+  <script>redirectIfLoggedIn(); // Now this function exists!
+  </script>
+</body>
+</html>

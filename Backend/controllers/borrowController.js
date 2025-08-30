@@ -1,3 +1,5 @@
+
+
 import { jwtAuthMiddleware, generateToken } from "../middlewares/jwt.js";
 import User from "../models/User.js";
 import { checkAdminRole } from "../middlewares/checkAdminRole.js";
@@ -11,6 +13,10 @@ export const borrowBook = async (req, res) => {
   try {
     const bookId = req.params.bookId;
     const userId = req.user.id;
+
+    if ((await checkAdminRole(userId))) {
+       return res.status(403).json({ message: "This is not for admin" });
+     }
 
     const book = await Book.findById(bookId);
 
