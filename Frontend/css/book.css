@@ -188,6 +188,21 @@ body {
     background-color: #c0392b;
 }
 
+.borrow-btn {
+    background-color: #0ae519;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.borrow-btn:hover {
+    background-color: #0ca065;
+}
+
 
 
 /* Responsive Design */
