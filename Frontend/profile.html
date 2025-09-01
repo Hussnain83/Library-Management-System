@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - Library Management</title>
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-title">Profile</h1>
+      <div class="nav-right">
+        <button id="back-btn" class="back-btn">Back to Dashboard</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="main-content">
+    <div class="container">
+      <div class="profile-wrapper">
+        <!-- Profile summary card -->
+        <section class="card profile-card">
+          <div class="avatar" aria-hidden="true">👤</div>
+          <div id="profile-details" class="profile-details">
+            <h2 class="profile-name" id="profile-name">Your Name</h2>
+            <p class="profile-email" id="profile-email">you@example.com</p>
+            <span class="role-badge" id="profile-role">student</span>
+          </div>
+        </section>
+
+        <!-- Update form card -->
+        <section class="card form-card">
+          <h3 class="card-title">Update Profile</h3>
+          <p class="card-subtitle">Change your name, email, or password.</p>
+
+          <!-- Single message box (success or error; JS will toggle classes) -->
+          <div id="message-container" class="message-container" role="status" aria-live="polite"></div>
+
+          <form id="update-profile-form" class="form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Enter your name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Enter your email" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="currentPassword">Current Password</label>
+                <input id="currentPassword" name="currentPassword" type="password" placeholder="Current password" />
+              </div>
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input id="newPassword" name="newPassword" type="password" placeholder="New password" />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" id="cancel-btn">Cancel</button>
+              <button type="submit" class="btn btn-primary" id="update-btn">Save Changes</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+
+<!-- Scripts -->
+    <script src="Js/authCheck.js"></script>
+    <script>
+        // Check authentication when dashboard loads
+        checkAuth();
+    </script>
+    <script src="Js/profile.js"></script>

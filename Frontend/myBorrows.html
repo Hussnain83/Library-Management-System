@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Borrows - Library Management</title>
+    <link rel="stylesheet" href="css/myborrows.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">My Borrowed Books</h1>
+            <div class="nav-right">
+                <button id="back-btn" class="back-btn">Back to Dashboard</button>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h2>My Borrowed Books</h2>
+            <p>Track your borrowed books and return dates</p>
+        </div>
+
+        <div class="borrows-container">
+            <div class="borrows-header">
+                <h3>Borrowed Books</h3>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading hidden">
+                <div class="loading-spinner"></div>
+                <p>Loading your borrowed books...</p>
+            </div>
+
+            <!-- Borrows Grid -->
+            <div id="borrows-grid" class="borrows-grid">
+                <!-- Template card for testing -->
+                <div class="borrow-card">
+                    <div class="status-badge status-borrowed">Borrowed</div>
+                    <div class="book-details">
+                        <h4 class="book-title"></h4>
+                        <p class="book-author"></p>
+                        <p class="book-category"></p>
+                    </div>
+                    <div class="borrow-dates">
+                        <div class="date-item">
+                            <span class="date-label">Borrowed:</span>
+                            <span class="date-value borrow-date"></span>
+                        </div>
+                        <div class="date-item">
+                            <span class="date-label">Return By:</span>
+                            <span class="date-value return-date"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state hidden">
+                <h3>No Borrowed Books</h3>
+                <p>You haven't borrowed any books yet.</p>
+                <a href="./books.html" class="browse-books-btn">Browse Books</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="Js/authCheck.js"></script>
+    <script>
+        // Check authentication when page loads
+        checkAuth();
+    </script>
+    <script src="Js/myBorrows.js"></script>
+</body>
+</html>

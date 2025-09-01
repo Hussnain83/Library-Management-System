@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   // const bookCopies = document.getElementById("book-copies");
   // const bookActions = document.getElementById("book-actions");
   // const deleteBtn = document.getElementById("delete-btn");
-
+   
   const fetchbo = await fetchAllBooks();
   displayBooks(fetchbo);
-  // await updateBorrowedButtons();
+  await updateBorrowedButtons();
 });
 
 // admin function called here
@@ -101,7 +101,11 @@ async function displayBooks(books) {
     if (admin) {
       buttonHTML = `<button class="delete-btn" data-book-id="${book._id}">Delete</button>`;
     } else {
-      buttonHTML = `<button class="borrow-btn" data-book-id="${book._id}">Borrow</button>`;
+      if (book.availableCopies < 1) {
+        buttonHTML = `<button class="borrow-btn" data-book-id="${book._id}" disabled style="background-color: #9ca3af; cursor: not-allowed;">Not Available</button>`;
+    } else {
+        buttonHTML = `<button class="borrow-btn" data-book-id="${book._id}">Borrow</button>`;
+    }
     }
 
     const bookCard = `
@@ -250,14 +254,16 @@ async function fetchUserBorrows() {
 // change text to borrowed if the user has already borrowed books
 
 async function updateBorrowedButtons() {
+   console.log("updateBorrowedButtons called, admin:", admin);
     if (!admin) {
         const borrowedData = await fetchUserBorrows();
         const borrowedBooks = borrowedData.record; // ✅ Get the array from record property
         
-        console.log("Borrowed books:", borrowedBooks);
-        
         borrowedBooks.forEach(borrowedBook => {
-            const bookId = borrowedBook.book; // ✅ The book ID is in the 'book' field
+          console.log("foreach");
+            const bookId = borrowedBook.book._id; // ✅ The book ID is in the 'book' field
+            console.log( "bookid is his",bookId)
+
             const borrowButton = document.querySelector(`[data-book-id="${bookId}"]`);
             
             if (borrowButton) {

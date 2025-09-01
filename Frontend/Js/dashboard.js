@@ -175,13 +175,11 @@ function goToReturns() {
 }
 
 function goToProfile() {
-    alert('Going to Profile Page (Not built yet)');
-    // Later: window.location.href = 'profile.html';
+    window.location.href = 'profile.html';
 }
 
 function goToMyBorrows() {
-    alert('Going to My Borrows (Not built yet)');
-    // Later: window.location.href = 'my-borrows.html';
+    window.location.href = "myBorrows.html"
 }
 
 // Hide loading and show dashboard
