@@ -3,7 +3,7 @@ import User from "../models/User.js";
 import { jwtAuthMiddleware, generateToken } from "../middlewares/jwt.js";
 const router = express.Router();
 
-import { registerUser, loginUser, profile, getAllUsers } from "../controllers/userController.js";
+import { registerUser, loginUser, profile, getAllUsers, updateUsers } from "../controllers/userController.js";
 
 
 // registeration router
@@ -14,5 +14,6 @@ router.post("/login", loginUser);
 router.get("/me", jwtAuthMiddleware, profile);
 // see all the users
 router.get("/users", jwtAuthMiddleware, getAllUsers);
-
+// update the users
+router.put("/update", jwtAuthMiddleware, updateUsers);
 export default router;

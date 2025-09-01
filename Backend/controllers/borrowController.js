@@ -88,7 +88,7 @@ export const returnBook = async (req, res) => {
 export const myborrows = async (req, res) => {
   try{
     const userId = req.user.id;
-    const record = await BorrowRecord.find({user: userId});
+    const record = await BorrowRecord.find({user: userId}).populate("book");
     if(!record){
       return res.status(401).json("No record available");
     }

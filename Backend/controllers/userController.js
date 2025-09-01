@@ -1,6 +1,10 @@
 import { jwtAuthMiddleware, generateToken } from "../middlewares/jwt.js";
 import User  from "../models/User.js";
 import { checkAdminRole } from "../middlewares/checkAdminRole.js";
+import { response } from "express";
+import bcrypt from "bcrypt" // Make sure you import bcrypt
+
+
 
 // registration of user
 export const registerUser = async(req, res) => {
@@ -78,4 +82,22 @@ export const getAllUsers = async(req, res)=> {
          res.status(500).json({error: "Internal server error"});
     }
 }
-
+// update the profile
+export const updateUsers = async (req, res)=> {
+    try{
+        const userId = req.user.id;
+        const update = req.body;
+        const user = await User.findById(userId);
+        if(!user){
+            return res.status(404).json({error: "User not found"});
+          };
+           Object.assign(user, update);
+           const updatedData = await user.save();
+        console.log("User updated successfully");
+        res.status(200).json({response: updatedData, message: "User updated successfully"});
+    }
+    catch(error){
+        console.log(error);
+        res.status(500).json({error:"Internal server error"});
+    }
+}
