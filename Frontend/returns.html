@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Return Book</title>
+  <link rel="stylesheet" href="css/returns.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Return a Book</h2>
+    <form id="returnBookForm" method="POST">
+      <div class="form-group">
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" name="userId" placeholder="Enter User ID" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bookId">Book ID</label>
+        <input type="text" id="bookId" name="bookId" placeholder="Enter Book ID" required>
+      </div>
+
+      <button id="submitButton" type="submit">Return Book</button>
+
+
+    </form>
+    <div id="message" class="message"></div>
+
+  </div>
+   <!-- Scripts -->
+     
+    <script src="Js/authCheck.js"></script>
+    <script src="Js/admin.js"></script>
+    <script>
+        // Check authentication when page loads
+        checkAuth();
+    </script>
+    <script src="Js/returns.js"></script>
+</body>
+</html>

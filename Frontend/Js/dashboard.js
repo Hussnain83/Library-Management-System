@@ -101,14 +101,9 @@ function createDashboardBoxes() {
                 <p>Manage all books</p>
             </div>
             <div class="grid-box" onclick="goToUsers()">
-                <div class="box-icon">👥</div>
-                <h3>Users</h3>
-                <p>View all users</p>
-            </div>
-            <div class="grid-box" onclick="goToRecords()">
-                <div class="box-icon">📋</div>
-                <h3>Records</h3>
-                <p>All borrow records</p>
+                <div class="box-icon">👥 + 📋</div>
+                <h3>Users Record</h3>
+                <p>View all Record</p>
             </div>
             <div class="grid-box" onclick="goToReturns()">
                 <div class="box-icon">🔄</div>
@@ -149,8 +144,8 @@ function goToBooks() {
 
 function goToUsers() {
     if (isUserAdmin) {
-        alert('Going to Users Management (Not built yet)');
-        // Later: window.location.href = 'admin-users.html';
+        
+        window.location.href = './checkUsers.html';
     } else {
         alert('You cannot access this');
     }
@@ -167,8 +162,8 @@ function goToRecords() {
 
 function goToReturns() {
     if (isUserAdmin) {
-        alert('Going to Overdue/Returns (Not built yet)');
-        // Later: window.location.href = 'admin-returns.html';
+       
+        window.location.href = 'returns.html';
     } else {
         alert('You cannot access this');
     }

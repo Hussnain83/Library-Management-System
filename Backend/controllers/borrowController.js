@@ -109,7 +109,10 @@ export const allrecords = async (req, res)=> {
      if (!(await checkAdminRole(userId))) {
        return res.status(403).json({ message: "This is only for admin" });
      }
-     const users = await BorrowRecord.find().sort({status: 1}); // 1 for ascending
+     const users = await BorrowRecord.find()
+     .sort({status: 1})
+     .populate("book", "title")
+     .populate("user", "name"); // 1 for ascending
     // "borrowed" comes before "returned" alphabetically
 
      console.log("Users fetched");

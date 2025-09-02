@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrow Records - Library Management</title>
+  <link rel="stylesheet" href="css/checkUsers.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-title">Borrow Records</h1>
+      <div class="nav-right">
+        <button id="back-btn" class="btn">Back</button>
+        <button class="btn logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <h2>All Borrow Records</h2>
+      <table class="records-table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Book</th>
+            <th>Status</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+          </tr>
+        </thead>
+        <tbody id="records-body">
+          <!-- Records will be inserted dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+    <!-- Scripts -->
+     
+    <script src="Js/authCheck.js"></script>
+    <script src="Js/admin.js"></script>
+    <script>
+        // Check authentication when page loads
+        checkAuth();
+    </script>
+    <script src="Js/checkUsers.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const categoryInput = document.getElementById("category");
   const copiesInput = document.getElementById("availableCopies");
   const message = document.getElementById("message-container");
+  
 
   bookForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -42,4 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
       message.className = "message-container error";
     }
   });
+  backButtonf();
 });
+
+
+function backButtonf() {
+  const cancel = document.getElementById("cancel-btn");
+  cancel.addEventListener("click", async (e) => {
+    window.location.href = "./Dashboard.html";
+  });
+}

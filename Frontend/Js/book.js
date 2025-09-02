@@ -260,10 +260,12 @@ async function updateBorrowedButtons() {
         const borrowedBooks = borrowedData.record; // ✅ Get the array from record property
         
         borrowedBooks.forEach(borrowedBook => {
-          console.log("foreach");
+            const status = borrowedBook.status; 
             const bookId = borrowedBook.book._id; // ✅ The book ID is in the 'book' field
-            console.log( "bookid is his",bookId)
+            console.log( "bookid is his",bookId);
+            console.log("status is: ", status);
 
+            if(status === "borrowed"){
             const borrowButton = document.querySelector(`[data-book-id="${bookId}"]`);
             
             if (borrowButton) {
@@ -271,7 +273,7 @@ async function updateBorrowedButtons() {
                 borrowButton.disabled = true;
                 borrowButton.style.backgroundColor = "#22c55e";
                 
-            }
+            }}
         });
 
         

@@ -1,0 +1,97 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1f2937;
+  padding: 1rem;
+  color: #fff;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-right .btn {
+  margin-left: 0.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.nav-right .btn:hover {
+  background-color: #1e40af;
+}
+
+.logout-btn {
+  background-color: #dc2626;
+}
+
+.logout-btn:hover {
+  background-color: #991b1b;
+}
+
+/* Main */
+.container {
+  padding: 2rem;
+}
+
+/* Table */
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.records-table th, 
+.records-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.records-table th {
+  background-color: #f9fafb;
+  font-weight: bold;
+  color: #374151;
+}
+
+.records-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Status */
+.status-borrowed {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.status-returned {
+  color: #dc2626;
+  font-weight: bold;
+}

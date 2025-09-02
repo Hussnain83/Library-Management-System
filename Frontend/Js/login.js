@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
       if (res.ok) {
         
-        alert("Login successful ✅" + data.response);
+        alert("Login successful ✅");
         console.log("Token:", data.response);
 
         // save token in localStorage
