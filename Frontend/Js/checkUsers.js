@@ -15,7 +15,7 @@ function backButton(){
 async function fetchUsersRecordAPI() {
    try {
     const token = localStorage.getItem("token");
-    const response = await fetch("http://localhost:3000/records", {
+    const response = await fetch("https://library-management-system-production-95ee.up.railway.app/records", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

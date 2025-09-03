@@ -1,6 +1,6 @@
 async function checkIfUserIsAdmin() {
     const token = localStorage.getItem("token");
-    const backendURL = "http://localhost:3000";
+    const backendURL = "https://library-management-system-production-95ee.up.railway.app";
     
     try {
         const response = await fetch(backendURL + "/user/me", {

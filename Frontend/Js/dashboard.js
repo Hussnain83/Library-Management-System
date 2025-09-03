@@ -50,7 +50,7 @@ async function startDashboard() {
 // Get user info from backend
 async function getUserInfo() {
     const token = localStorage.getItem('token');
-    const backendURL = 'http://localhost:3000'; // Change this to your backend URL
+    const backendURL = 'https://library-management-system-production-95ee.up.railway.app'; // Change this to your backend URL
     
     try {
         const response = await fetch(backendURL + '/user/me', {

@@ -20,9 +20,7 @@ app.use("/user", userRoutes);
 app.use("/book", bookRoutes);
 app.use("/", borrowRoutes);
 
-app.get("/", (req, res) => {
-  res.send("✅ Library Management Backend is running on Railway!");
-});
+
 
 
 app.listen(PORT, "0.0.0.0", ()=>{

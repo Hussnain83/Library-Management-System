@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async ()=> {
 async function fetchmyBorrows(){
     try{
         const token = localStorage.getItem('token');
-        const response = await fetch("http://localhost:3000/myborrows",{
+        const response = await fetch("https://library-management-system-production-95ee.up.railway.app/myborrows",{
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,

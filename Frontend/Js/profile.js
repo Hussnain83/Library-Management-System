@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async ()=> {
 async function fetchUserInfo(){
     try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:3000/user/me", {
+        const response = await fetch("https://library-management-system-production-95ee.up.railway.app/user/me", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +66,7 @@ async function fetchingForUpdate() {
         updateData.password = newPassword;
       }
 
-      const response = await fetch("http://localhost:3000/user/update", {
+      const response = await fetch("https://library-management-system-production-95ee.up.railway.app/user/update", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

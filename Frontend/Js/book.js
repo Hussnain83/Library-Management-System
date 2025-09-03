@@ -70,7 +70,7 @@ async function fetchAllBooks() {
   try {
     const token = localStorage.getItem("token");
 
-    const response = await fetch("http://localhost:3000/book/books", {
+    const response = await fetch("https://library-management-system-production-95ee.up.railway.app/book/books", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -151,7 +151,7 @@ async function deleteBook(bookId){
     console.log(bookId);
     try {
         const token = localStorage.getItem('token');
-        const res = await fetch (`http://localhost:3000/book/${bookId}`, {
+        const res = await fetch (`https://library-management-system-production-95ee.up.railway.app/book/${bookId}`, {
             method: "DELETE",
             headers: {
           "Content-Type": "application/json",
@@ -189,7 +189,7 @@ async function borrowBook(bookId) {
     try {
         const token = localStorage.getItem('token');
         
-        const res = await fetch(`http://localhost:3000/borrow/${bookId}`, {
+        const res = await fetch(`https://library-management-system-production-95ee.up.railway.app/borrow/${bookId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -234,7 +234,7 @@ async function fetchUserBorrows() {
     try {
         const token = localStorage.getItem('token');
         
-        const response = await fetch('http://localhost:3000/myborrows', {
+        const response = await fetch('https://library-management-system-production-95ee.up.railway.app/myborrows', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`http://localhost:3000/return/${bookId}`, {
+      const res = await fetch(`https://library-management-system-production-95ee.up.railway.app/return/${bookId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

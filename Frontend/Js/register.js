@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const role = roleInput.value;
     
     try{
-        const res = await fetch("http://localhost:3000/user/register",{
+        const res = await fetch("https://library-management-system-production-95ee.up.railway.app/user/register",{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

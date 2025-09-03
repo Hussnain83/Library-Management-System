@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = passwordInput.value;
     // console.log(email); console.log(password);
     try {
-      const res = await fetch("http://localhost:3000/user/login", {
+      const res = await fetch("https://library-management-system-production-95ee.up.railway.app/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
