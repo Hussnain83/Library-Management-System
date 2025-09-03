@@ -9,8 +9,9 @@ const PORT = process.env.PORT || 3000
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ["https://library-management-system-dogar-js.vercel.app/",
-  "https://library-management-system-git-main-hussnain-dogars-projects.vercel.app/"]
+  origin: ["https://library-management-system-dogar-js.vercel.app",
+  "https://library-management-system-git-main-hussnain-dogars-projects.vercel.app",
+"http://127.0.0.1:5500", ]
 }));
 
 
@@ -22,6 +23,10 @@ app.use("/book", bookRoutes);
 app.use("/", borrowRoutes);
 
 
+// Test route
+app.get("/", (req, res) => {
+  res.send("✅ Library Management Backend is running on Railway!");
+});
 
 
 app.listen(PORT, "0.0.0.0", ()=>{
