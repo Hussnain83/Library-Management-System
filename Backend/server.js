@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "*"
+  origin: "https://library-management-system-dogar-js.vercel.app/"
 }));
 
 
