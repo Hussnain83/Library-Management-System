@@ -5,11 +5,11 @@ import db from "./db.js";
 import cors from "cors";
 
 dotenv.config();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "http://127.0.0.1:5500"
+  origin: "*"
 }));
 
 
@@ -20,6 +20,11 @@ app.use("/user", userRoutes);
 app.use("/book", bookRoutes);
 app.use("/", borrowRoutes);
 
-app.listen(PORT, ()=>{
+app.get("/", (req, res) => {
+  res.send("✅ Library Management Backend is running on Railway!");
+});
+
+
+app.listen(PORT, "0.0.0.0", ()=>{
     console.log("listening on port",PORT);
 });
