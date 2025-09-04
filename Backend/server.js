@@ -12,7 +12,7 @@ app.use(cors({
   origin: ["https://library-management-system-dogar-js.vercel.app",
   "https://library-management-system-git-main-hussnain-dogars-projects.vercel.app",
 "http://127.0.0.1:5500",
-"https://library-management-system-hussnain-dogars-projects.vercel.app/" ]
+"https://library-management-system-hussnain-dogars-projects.vercel.app" ]
 }));
 
 
